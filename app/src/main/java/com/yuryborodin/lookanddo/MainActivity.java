@@ -325,7 +325,6 @@ public class MainActivity extends AppCompatActivity
         mDrawView = (DrawView) findViewById(R.id.drawView);
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        System.out.println(metrics.heightPixels);
         mDrawView.init(metrics);
         mUpdateButton.setEnabled(updateButtonOn);
         mProceedButton.setEnabled(true);
