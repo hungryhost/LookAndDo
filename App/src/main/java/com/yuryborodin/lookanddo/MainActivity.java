@@ -330,7 +330,7 @@ public class MainActivity extends AppCompatActivity
         mUpdateButton.setEnabled(updateButtonOn);
         mProceedButton.setEnabled(true);
         mDrawView.enablePaint(true);
-        /*
+        
         mImageArray[0] = R.drawable.i00;
         mImageArray[1] = R.drawable.i01;
         mImageArray[2] = R.drawable.i02;
@@ -390,7 +390,7 @@ public class MainActivity extends AppCompatActivity
         mImageArray[47] = R.drawable.i92;
         mImageArray[48] = R.drawable.i93;
         mImageArray[49] = R.drawable.i94;
-        */
+        
         // retrieving score from saved preferences
         for(int i = 0; i<= mCurrentTag; i++){
             mScoreArray[i] = Double.parseDouble(imagePreferences.getString(
