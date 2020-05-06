@@ -330,7 +330,9 @@ public class MainActivity extends AppCompatActivity
         mUpdateButton.setEnabled(updateButtonOn);
         mProceedButton.setEnabled(true);
         mDrawView.enablePaint(true);
-        
+
+        // images are not available on GitHub
+        /*
         mImageArray[0] = R.drawable.i00;
         mImageArray[1] = R.drawable.i01;
         mImageArray[2] = R.drawable.i02;
@@ -390,7 +392,7 @@ public class MainActivity extends AppCompatActivity
         mImageArray[47] = R.drawable.i92;
         mImageArray[48] = R.drawable.i93;
         mImageArray[49] = R.drawable.i94;
-        
+        */
         // retrieving score from saved preferences
         for(int i = 0; i<= mCurrentTag; i++){
             mScoreArray[i] = Double.parseDouble(imagePreferences.getString(
@@ -500,7 +502,6 @@ public class MainActivity extends AppCompatActivity
 
         for(int i = 0; i<= mCurrentIteration; i++){
             mGameScore += mFinalScoreArray[i];
-            System.out.println(mGameScore);
             scoreEdit.putString(String.valueOf(i), String.valueOf(mFinalScoreArray[i]));
         }
         scoreEdit.apply();
@@ -534,11 +535,8 @@ public class MainActivity extends AppCompatActivity
         Bitmap final_image = mDrawView.proceed();
         List<Classifier.Recognition> results = analyse(final_image);
 
-        //int numb = mCurrentTag;
-        //int numb1 = numb + 1;
+
         int id = Integer.parseInt(results.get(0).getId());
-       // System.out.println("id TS: " + id + "\nNumb in labels: " + numb1 + "\n Expected: " +
-           //     results.get(0).getTitle());
         final String textOk = getString(R.string.goodJobString);
         final String textNotOk = getString(R.string.tryAgainString);
         final String textNotPainted = getString(R.string.notPaintedString);
@@ -837,7 +835,6 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences.Editor editor = scorePreference.edit();
         if(mCurrentSubStep < (NUMBER_OF_ROUNDS-1) && !byUser){
             mCurrentIteration++;
-            System.out.println(mCurrentIteration);
             scoreEdit.putInt("n", mCurrentIteration);
             scoreEdit.apply();
             // we have 5 different images for each class
