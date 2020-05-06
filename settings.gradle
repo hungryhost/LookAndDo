@@ -1,2 +1,2 @@
-include ':LookAndDoApp'
+include ':app'
 rootProject.name='lookanddo'
